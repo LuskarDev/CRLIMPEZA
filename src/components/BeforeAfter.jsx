@@ -13,6 +13,7 @@ export default function BeforeAfter() {
             ANTES E <span>DEPOIS</span>
           </h2>
           <p>Arraste a seta sobre a foto e veja a transformação real dos nossos trabalhos</p>
+          <p className="ba-swipe-hint">Deslize para o lado para ver os outros trabalhos →</p>
         </Reveal>
 
         <div className="ba-grid">

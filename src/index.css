@@ -1091,6 +1091,10 @@ ul {
   background: var(--blue-light);
 }
 
+.ba-swipe-hint {
+  display: none;
+}
+
 .ba-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1681,6 +1685,19 @@ ul {
 }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .main-nav,
+  .header-cta {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .mobile-nav.open {
+    display: flex;
+  }
+}
+
 @media (max-width: 980px) {
   .hero-split {
     grid-template-columns: 1fr;
@@ -1722,29 +1739,12 @@ ul {
   .ba-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-    grid-template-columns: 1fr;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-  .service-form-visual img {
-    max-height: 280px;
-  }
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 760px) {
-  .main-nav,
-  .header-cta {
-    display: none;
-  }
-  .burger {
-    display: block;
-  }
-  .mobile-nav.open {
-    display: flex;
-  }
   .hero h1 {
     font-size: 32px;
   }
@@ -1771,13 +1771,44 @@ ul {
     grid-template-columns: 1fr;
   }
   .ba-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
   }
+  .ba-grid > * {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+  }
+  .ba-swipe-hint {
+    display: block;
+    margin-top: 6px !important;
+    font-size: 12.5px;
+    color: var(--blue);
+    font-weight: 700;
+  }
+  .footer-grid {
     grid-template-columns: 1fr;
   }
   .info-bar .wrap {
     flex-direction: column;
     text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-inner {
+    padding: 10px 16px;
+    gap: 12px;
+  }
+  .brand img {
+    height: 38px;
+  }
+  .mobile-nav {
+    padding: 10px 16px 16px;
   }
 }
 
@@ -1820,6 +1851,17 @@ ul {
   object-fit: cover;
   border-radius: 20px;
   box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 980px) {
+  .service-form-layout {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .service-form-visual img {
+    max-height: 280px;
+  }
 }
 
 .form-card-split {
@@ -1915,6 +1957,19 @@ ul {
   opacity: 0.55;
   cursor: not-allowed;
   transform: none !important;
+}
+
+@media (max-width: 760px) {
+  .form-card {
+    padding: 22px 18px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .service-form-visual img {
+    max-height: 220px;
+  }
 }
 
 /* ---------- Order Modal (popup) ---------- */
