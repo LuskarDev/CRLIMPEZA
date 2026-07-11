@@ -1,0 +1,21 @@
+{
+  "name": "CR Limpeza Profissional",
+  "short_name": "CR Limpeza",
+  "description": "Produtos de limpeza com entrega rápida. Cloro, Amaciante, Detergente, Desinfetante e Sabão Líquido.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0c2e63",
+  "icons": [
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

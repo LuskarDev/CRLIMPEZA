@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import IconSelect from './IconSelect'
 import { products, kits, kitBottles, paymentMethods, WHATSAPP_NUMBER } from '../data'
 import { useOrderModal } from '../context/OrderModalContext'
+import useFocusTrap from '../hooks/useFocusTrap'
 
 const orderableItems = [
   ...products.map((p) => ({
@@ -24,12 +25,14 @@ function formatBRL(v) {
 
 export default function OrderModal() {
   const { isOpen, selectedId, closeOrderModal } = useOrderModal()
+  const modalRef = useFocusTrap(isOpen)
 
   const [nome, setNome] = useState('')
   const [endereco, setEndereco] = useState('')
   const [referencia, setReferencia] = useState('')
   const [itemValue, setItemValue] = useState(orderableItems[0].value)
   const [quantidade, setQuantidade] = useState(1)
+  const [quantidadeInput, setQuantidadeInput] = useState('1')
   const [pagamento, setPagamento] = useState(paymentMethods[0])
   const [valorPago, setValorPago] = useState('')
 
@@ -38,6 +41,7 @@ export default function OrderModal() {
     if (isOpen && selectedId) {
       setItemValue(selectedId)
       setQuantidade(1)
+      setQuantidadeInput('1')
       setValorPago('')
     }
   }, [isOpen, selectedId])
@@ -102,7 +106,7 @@ export default function OrderModal() {
         if (e.target === e.currentTarget) closeOrderModal()
       }}
     >
-      <div className="order-modal" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+      <div className="order-modal" role="dialog" aria-modal="true" aria-labelledby="order-modal-title" ref={modalRef}>
         <button className="order-modal-close" aria-label="Fechar" onClick={closeOrderModal}>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
             <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
@@ -130,12 +134,56 @@ export default function OrderModal() {
 
             <div className="form-field">
               <label>Quantidade</label>
-              <input
-                type="number"
-                min="1"
-                value={quantidade}
-                onChange={(e) => setQuantidade(Math.max(1, parseInt(e.target.value, 10) || 1))}
-              />
+              <div className="qty-stepper">
+                <button
+                  type="button"
+                  className="qty-btn"
+                  aria-label="Diminuir quantidade"
+                  onClick={() => {
+                    const next = Math.max(1, quantidade - 1)
+                    setQuantidade(next)
+                    setQuantidadeInput(String(next))
+                  }}
+                >
+                  −
+                </button>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  value={quantidadeInput}
+                  onChange={(e) => {
+                    const raw = e.target.value
+                    // Permite apagar o campo para digitar um novo número sem travar em 1
+                    if (raw === '') {
+                      setQuantidadeInput('')
+                      return
+                    }
+                    if (!/^\d+$/.test(raw)) return
+                    setQuantidadeInput(raw)
+                    const parsed = parseInt(raw, 10)
+                    if (!isNaN(parsed) && parsed > 0) setQuantidade(parsed)
+                  }}
+                  onBlur={() => {
+                    // Se o campo ficar vazio ou zerado ao sair, volta pro último valor válido
+                    if (quantidadeInput === '' || parseInt(quantidadeInput, 10) < 1) {
+                      setQuantidadeInput(String(quantidade))
+                    }
+                  }}
+                />
+                <button
+                  type="button"
+                  className="qty-btn"
+                  aria-label="Aumentar quantidade"
+                  onClick={() => {
+                    const next = quantidade + 1
+                    setQuantidade(next)
+                    setQuantidadeInput(String(next))
+                  }}
+                >
+                  +
+                </button>
+              </div>
             </div>
 
             <div className="form-field">

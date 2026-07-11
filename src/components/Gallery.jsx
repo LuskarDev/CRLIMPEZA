@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { galleryCategories, galleryItems, WHATSAPP_NUMBER } from '../data'
 import { galleryImages } from '../galleryImages'
 import Reveal from './Reveal'
+import useFocusTrap from '../hooks/useFocusTrap'
 
 const INITIAL_VISIBLE_COUNT = 5
 
@@ -9,6 +10,16 @@ export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('todos')
   const [lightboxIndex, setLightboxIndex] = useState(null)
   const [showAll, setShowAll] = useState(false)
+  const [loadedImages, setLoadedImages] = useState(() => new Set())
+
+  const markLoaded = (id) => {
+    setLoadedImages((prev) => {
+      if (prev.has(id)) return prev
+      const next = new Set(prev)
+      next.add(id)
+      return next
+    })
+  }
 
   const filteredItems = useMemo(
     () => (activeCategory === 'todos' ? galleryItems : galleryItems.filter((it) => it.category === activeCategory)),
@@ -52,6 +63,7 @@ export default function Gallery() {
   }, [lightboxIndex, filteredItems.length])
 
   const activeItem = lightboxIndex !== null ? filteredItems[lightboxIndex] : null
+  const lightboxRef = useFocusTrap(lightboxIndex !== null)
 
   return (
     <section className="gallery-section" id="galeria">
@@ -86,8 +98,13 @@ export default function Gallery() {
               delay={(i % 6) * 70}
               onClick={() => openLightbox(item)}
             >
-              <span className="gallery-card-media">
-                <img src={galleryImages[item.img]} alt={item.title} loading="lazy" />
+              <span className={`gallery-card-media${loadedImages.has(item.id) ? ' is-loaded' : ' is-loading'}`}>
+                <img
+                  src={galleryImages[item.img]}
+                  alt={item.title}
+                  loading="lazy"
+                  onLoad={() => markLoaded(item.id)}
+                />
               </span>
               <span className="gallery-card-info">
                 <strong>{item.title}</strong>
@@ -124,7 +141,7 @@ export default function Gallery() {
             if (e.target === e.currentTarget) closeLightbox()
           }}
         >
-          <div className="lightbox" role="dialog" aria-modal="true" aria-label={activeItem.title}>
+          <div className="lightbox" role="dialog" aria-modal="true" aria-label={activeItem.title} ref={lightboxRef}>
             <button className="lightbox-close" aria-label="Fechar" onClick={closeLightbox}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
                 <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
