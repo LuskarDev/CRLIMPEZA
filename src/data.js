@@ -18,9 +18,10 @@ export const products = [
 export const kitBottles = [cloro, amaciante, detergente, desinfetante, sabao]
 
 export const kits = [
-  { id: 'kit-1l', label: '1 LITRO', price: '23,00', priceValue: 23.0 },
+  { id: 'kit-1l', label: '1 LITRO', price: '23,99', priceValue: 23.99 },
   { id: 'kit-2l', label: '2 LITROS', price: '39,90', priceValue: 39.9 },
-  { id: 'kit-3l', label: '3 LITROS', price: '49,90', priceValue: 49.9 },
+  { id: 'kit-3l', label: '3 LITROS', price: '59,99', priceValue: 59.99 },
+  { id: 'kit-5l', label: '5 LITROS', price: '119,90', priceValue: 119.9 },
 ]
 
 export const paymentMethods = ['Pix', 'Dinheiro', 'Cartão de Crédito', 'Cartão de Débito']
