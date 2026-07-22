@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
 import InfoBar from './components/InfoBar'
+import Banners from './components/Banners'
 import Products from './components/Products'
 import Kits from './components/Kits'
 import Services from './components/Services'
@@ -21,6 +22,7 @@ export default function App() {
       <main>
         <Hero />
         <InfoBar />
+        <Banners />
         <Products />
         <Kits />
         <Services />

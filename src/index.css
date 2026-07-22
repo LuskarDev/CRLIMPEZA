@@ -1352,6 +1352,38 @@ ul {
   right: 14px;
 }
 
+/* ---------- Banners promocionais ---------- */
+.banners-section {
+  padding: 56px 0;
+  background: #fff;
+}
+
+.banners-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.banner-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+
+.banner-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 60px rgba(12, 46, 99, 0.18);
+}
+
+@media (max-width: 760px) {
+  .banners-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ---------- Indique e Ganhe ---------- */
 .indique-section {
   padding: 56px 0;
