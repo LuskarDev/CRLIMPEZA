@@ -7,9 +7,8 @@ export default function WhyChoose() {
     <section className="why-section">
       <div className="wrap">
         <Reveal as="div" className="section-head">
-          <h2>
-            POR QUE ESCOLHER A <span>CR LIMPEZA?</span>
-          </h2>
+          <span className="section-eyebrow">NOSSOS DIFERENCIAIS</span>
+          <h2>Por que escolher a CR Limpeza?</h2>
         </Reveal>
 
         <div className="why-grid">

@@ -1,10 +1,19 @@
 import { useEffect, useState } from 'react'
 import logo from '../assets/logo.png'
-import { footerLinks } from '../data'
+
+const navLinks = [
+  { label: 'Início', href: '#inicio' },
+  { label: 'Sobre Nós', href: '#sobre' },
+  { label: 'Serviços', href: '#contratar-servico' },
+  { label: 'Produtos', href: '#produtos' },
+  { label: 'Galeria', href: '#galeria-completa' },
+  { label: 'Contato', href: '#contato' },
+]
 
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [active, setActive] = useState('#inicio')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -21,8 +30,13 @@ export default function Header() {
         </a>
 
         <nav className="main-nav">
-          {footerLinks.map((l) => (
-            <a key={l.href} href={l.href}>
+          {navLinks.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className={active === l.href ? 'is-active' : ''}
+              onClick={() => setActive(l.href)}
+            >
               {l.label}
             </a>
           ))}
@@ -36,8 +50,8 @@ export default function Header() {
       </div>
 
       <nav className={`mobile-nav ${open ? 'open' : ''}`}>
-        {footerLinks.map((l) => (
-          <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
+        {navLinks.map((l) => (
+          <a key={l.href} href={l.href} onClick={() => { setOpen(false); setActive(l.href) }}>
             {l.label}
           </a>
         ))}

@@ -1,51 +1,83 @@
 import { products } from '../data'
-import { useOrderModal } from '../context/OrderModalContext'
+import Icon from './Icon'
 import Reveal from './Reveal'
+import ProductsCarousel from './ProductsCarousel'
+import productsBanner from '../assets/products-banner.jpg'
 
-function formatPrice(v) {
-  return v.toFixed(2).replace('.', ',')
-}
+const qualityFeatures = [
+  { icon: 'thumbsbadge', title: 'Alta Qualidade', text: 'Produtos testados e aprovados' },
+  { icon: 'shield', title: 'Segurança', text: 'Fórmulas seguras para você e sua família' },
+  { icon: 'sparkle', title: 'Eficiência', text: 'Resultados superiores com menor esforço' },
+  { icon: 'gift', title: 'Entrega Rápida', text: 'Receba em casa com agilidade e segurança' },
+]
+
+const deliveryFeatures = [
+  { icon: 'fasttruck', title: 'Entrega rápida', text: 'Agilidade e segurança na sua entrega' },
+  { icon: 'gift', title: 'Produtos originais', text: 'Qualidade garantida CR Limpeza' },
+  { icon: 'headset', title: 'Atendimento especializado', text: 'Suporte dedicado para suas necessidades' },
+  { icon: 'handshake', title: 'Pagamentos seguros', text: 'Ambiente 100% seguro e confiável' },
+]
 
 export default function Products() {
-  const { openOrderModal } = useOrderModal()
-
   return (
     <section className="products-section" id="produtos">
       <div className="wrap">
+        <div className="products-intro">
+          <Reveal as="div" className="products-intro-copy">
+            <span className="section-eyebrow">NOSSOS PRODUTOS</span>
+            <h2>Qualidade que você pode confiar</h2>
+            <p>
+              Trabalhamos com produtos de alta performance para limpeza e higienização, garantindo eficiência,
+              segurança e os melhores resultados.
+            </p>
+            <div className="products-intro-features">
+              {qualityFeatures.map((f) => (
+                <div className="products-intro-feature" key={f.title}>
+                  <span className="products-intro-feature-icon">
+                    <Icon name={f.icon} alt="" />
+                  </span>
+                  <div>
+                    <strong>{f.title}</strong>
+                    <span>{f.text}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal as="div" className="products-intro-visual" variant="scale" delay={120}>
+            <img src={productsBanner} alt="Linha de produtos CR Limpeza" />
+          </Reveal>
+        </div>
+
         <Reveal as="div" className="section-head">
-          <h2>
-            NOSSOS <span>PRODUTOS</span>
-          </h2>
-          <p>Produtos de qualidade para facilitar o seu dia a dia!</p>
+          <span className="section-eyebrow">LINHA COMPLETA</span>
+          <h2>Conheça nossa linha de produtos</h2>
         </Reveal>
 
-        <div className="product-row">
-          {products.map((p, i) => (
-            <Reveal
-              as="button"
-              type="button"
-              className="product-card"
-              key={p.id}
-              delay={i * 80}
-              onClick={() => openOrderModal(p.id)}
-              aria-label={`Pedir ${p.name}`}
-            >
-              <img src={p.img} alt={p.name} />
-              <h3>{p.name}</h3>
-              <p className="qty">{p.qty}</p>
-              <div className="price-row">
-                <span className="price">R$ {formatPrice(p.price)}</span>
-                <span className="cart-btn" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="9" cy="21" r="1" />
-                    <circle cx="20" cy="21" r="1" />
-                    <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
-                  </svg>
+        <Reveal as="div">
+          <ProductsCarousel products={products} />
+        </Reveal>
+
+        <Reveal as="div" className="products-delivery-strip" delay={100}>
+          <div className="products-delivery-lead">
+            <Icon name="fasttruck" alt="" />
+            <span>Entregamos em toda a região!</span>
+          </div>
+          <div className="products-delivery-items">
+            {deliveryFeatures.map((f) => (
+              <div className="products-delivery-item" key={f.title}>
+                <span className="products-delivery-icon">
+                  <Icon name={f.icon} alt="" />
                 </span>
+                <div>
+                  <strong>{f.title}</strong>
+                  <span>{f.text}</span>
+                </div>
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   )

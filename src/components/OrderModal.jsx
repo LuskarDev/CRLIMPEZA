@@ -114,9 +114,8 @@ export default function OrderModal() {
         </button>
 
         <div className="section-head order-modal-head">
-          <h2 id="order-modal-title">
-            FAÇA SEU <span>PEDIDO</span>
-          </h2>
+          <span className="section-eyebrow">FAÇA SEU PEDIDO</span>
+          <h2 id="order-modal-title">Finalize seu pedido</h2>
           <p>Preencha os dados abaixo e envie seu pedido direto pelo WhatsApp</p>
         </div>
 

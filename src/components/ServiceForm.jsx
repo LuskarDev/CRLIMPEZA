@@ -38,9 +38,8 @@ export default function ServiceForm() {
     <section className="form-section form-section-alt" id="contratar-servico">
       <div className="wrap">
         <Reveal as="div" className="section-head">
-          <h2>
-            CONTRATE UM <span>SERVIÇO</span>
-          </h2>
+          <span className="section-eyebrow">SOLICITE AGORA</span>
+          <h2>Contrate um serviço</h2>
           <p>Escolha o serviço desejado e receba um orçamento sem compromisso</p>
         </Reveal>
 

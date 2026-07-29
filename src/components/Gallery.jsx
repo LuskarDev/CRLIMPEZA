@@ -1,10 +1,18 @@
 import { useEffect, useMemo, useState } from 'react'
 import { galleryCategories, galleryItems, WHATSAPP_NUMBER } from '../data'
 import { galleryImages } from '../galleryImages'
+import Icon from './Icon'
 import Reveal from './Reveal'
 import useFocusTrap from '../hooks/useFocusTrap'
 
-const INITIAL_VISIBLE_COUNT = 5
+const INITIAL_VISIBLE_COUNT = 8
+
+const categoryIcons = {
+  'caixa-dagua': 'bucket',
+  dedetizacao: 'bug',
+  'limpeza-terreno': 'spray',
+  esquadrias: 'house',
+}
 
 export default function Gallery() {
   const [activeCategory, setActiveCategory] = useState('todos')
@@ -66,13 +74,11 @@ export default function Gallery() {
   const lightboxRef = useFocusTrap(lightboxIndex !== null)
 
   return (
-    <section className="gallery-section" id="galeria">
+    <section className="gallery-section" id="galeria-completa">
       <div className="wrap">
         <Reveal as="div" className="section-head">
-          <h2>
-            NOSSOS <span>TRABALHOS</span>
-          </h2>
-          <p>Confira alguns exemplos dos serviços que já realizamos</p>
+          <span className="section-eyebrow">GALERIA DE SERVIÇOS</span>
+          <h2>Veja alguns dos nossos trabalhos</h2>
         </Reveal>
 
         <Reveal as="div" className="gallery-filters" delay={60}>
@@ -105,10 +111,16 @@ export default function Gallery() {
                   loading="lazy"
                   onLoad={() => markLoaded(item.id)}
                 />
-              </span>
-              <span className="gallery-card-info">
-                <strong>{item.title}</strong>
-                <span className="gallery-card-location">{item.location}</span>
+                <span className="gallery-card-overlay" aria-hidden="true" />
+                {categoryIcons[item.category] && (
+                  <span className="gallery-card-icon-badge">
+                    <Icon name={categoryIcons[item.category]} alt="" />
+                  </span>
+                )}
+                <span className="gallery-card-info">
+                  <strong>{item.title}</strong>
+                  <span className="gallery-card-location">{item.location}</span>
+                </span>
               </span>
               <span className="gallery-card-zoom" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -121,11 +133,28 @@ export default function Gallery() {
         </div>
 
         {hasMore && (
-          <div className="gallery-more">
-            <button type="button" className="btn btn-outline gallery-more-btn" onClick={() => setShowAll(true)}>
-              Ver mais fotos ({filteredItems.length - INITIAL_VISIBLE_COUNT})
-            </button>
-          </div>
+          <Reveal as="div" className="gallery-cta-banner">
+            <div className="gallery-cta-icon">
+              <Icon name="peopleplus" alt="" />
+            </div>
+            <div className="gallery-cta-text">
+              <h3>Quer ver mais resultados?</h3>
+              <p>Confira mais imagens dos nossos serviços e veja a qualidade do nosso trabalho!</p>
+              <button type="button" className="btn btn-green gallery-more-btn" onClick={() => setShowAll(true)}>
+                Ver mais fotos
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <path d="M12 5v14M5 12h14" strokeLinecap="round" />
+                </svg>
+              </button>
+            </div>
+            <div className="gallery-cta-thumbs">
+              {filteredItems.slice(INITIAL_VISIBLE_COUNT, INITIAL_VISIBLE_COUNT + 5).map((item) => (
+                <span className="gallery-cta-thumb" key={item.id}>
+                  <img src={galleryImages[item.img]} alt="" loading="lazy" />
+                </span>
+              ))}
+            </div>
+          </Reveal>
         )}
 
         <p className="gallery-note">

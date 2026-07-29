@@ -1,21 +1,193 @@
 import cloro from './assets/products/cloro.png'
+import cloro1l from './assets/products/cloro-1l.png'
+import cloro3l from './assets/products/cloro-3l.png'
+import cloro5l from './assets/products/cloro-5l.png'
+import cloroKit from './assets/products/cloro-kit.png'
 import amaciante from './assets/products/amaciante.png'
+import amaciante1l from './assets/products/amaciante-1l.png'
+import amaciante3l from './assets/products/amaciante-3l.png'
+import amaciante5l from './assets/products/amaciante-5l.png'
+import amacianteKit from './assets/products/amaciante-kit.png'
 import detergente from './assets/products/detergente.png'
+import detergente1l from './assets/products/detergente-1l.png'
+import detergente3l from './assets/products/detergente-3l.png'
+import detergente5l from './assets/products/detergente-5l.png'
+import detergenteKit from './assets/products/detergente-kit.png'
 import desinfetante from './assets/products/desinfetante.png'
+import desinfetante1l from './assets/products/desinfetante-1l.png'
+import desinfetante3l from './assets/products/desinfetante-3l.png'
+import desinfetante5l from './assets/products/desinfetante-5l.png'
+import desinfetanteKit from './assets/products/desinfetante-kit.png'
 import sabao from './assets/products/sabao.png'
 
 export const WHATSAPP_NUMBER = '5521986253642'
 export const WHATSAPP_DISPLAY = '(21) 98625-3642'
+export const REVIEW_WHATSAPP_NUMBER = '5521971447401'
 
 export const products = [
-  { id: 'cloro', name: 'Cloro', qty: '2 Litros', price: 8.99, img: cloro },
-  { id: 'amaciante', name: 'Amaciante', qty: '2 Litros', price: 9.99, img: amaciante },
-  { id: 'detergente', name: 'Detergente', qty: '2 Litros', price: 8.99, img: detergente },
-  { id: 'desinfetante', name: 'Desinfetante', qty: '2 Litros', price: 8.99, img: desinfetante },
-  { id: 'sabao', name: 'Sabão Líquido', qty: '2 Litros', price: 9.99, img: sabao },
+  {
+    id: 'cloro-1l',
+    name: 'Cloro',
+    qty: '1 Litro',
+    price: 4.5,
+    img: cloro1l,
+    desc: 'Ideal para desinfecção de pisos, ralos, banheiros e áreas externas.',
+  },
+  {
+    id: 'cloro',
+    name: 'Cloro',
+    qty: '2 Litros',
+    price: 8.99,
+    img: cloro,
+    desc: 'Ideal para desinfecção de pisos, ralos, banheiros e áreas externas.',
+  },
+  {
+    id: 'cloro-3l',
+    name: 'Cloro',
+    qty: '3 Litros',
+    price: 13.49,
+    img: cloro3l,
+    desc: 'Ideal para desinfecção de pisos, ralos, banheiros e áreas externas.',
+  },
+  {
+    id: 'cloro-5l',
+    name: 'Cloro',
+    qty: '5 Litros',
+    price: 15.0,
+    img: cloro5l,
+    desc: 'Ideal para desinfecção de pisos, ralos, banheiros e áreas externas.',
+  },
+  {
+    id: 'amaciante-1l',
+    name: 'Amaciante',
+    qty: '1 Litro',
+    price: 5.0,
+    img: amaciante1l,
+    desc: 'Deixa suas roupas macias, cheirosas e com perfume de longa duração.',
+  },
+  {
+    id: 'amaciante',
+    name: 'Amaciante',
+    qty: '2 Litros',
+    price: 9.99,
+    img: amaciante,
+    desc: 'Deixa suas roupas macias, cheirosas e com perfume de longa duração.',
+  },
+  {
+    id: 'amaciante-3l',
+    name: 'Amaciante',
+    qty: '3 Litros',
+    price: 14.99,
+    img: amaciante3l,
+    desc: 'Deixa suas roupas macias, cheirosas e com perfume de longa duração.',
+  },
+  {
+    id: 'amaciante-5l',
+    name: 'Amaciante',
+    qty: '5 Litros',
+    price: 24.99,
+    img: amaciante5l,
+    desc: 'Deixa suas roupas macias, cheirosas e com perfume de longa duração.',
+  },
+  {
+    id: 'detergente-1l',
+    name: 'Detergente',
+    qty: '1 Litro',
+    price: 4.5,
+    img: detergente1l,
+    desc: 'Remove gordura com eficiência, rende bastante e cuida das suas mãos.',
+  },
+  {
+    id: 'detergente',
+    name: 'Detergente',
+    qty: '2 Litros',
+    price: 8.99,
+    img: detergente,
+    desc: 'Remove gordura com eficiência, rende bastante e cuida das suas mãos.',
+  },
+  {
+    id: 'detergente-3l',
+    name: 'Detergente',
+    qty: '3 Litros',
+    price: 13.49,
+    img: detergente3l,
+    desc: 'Remove gordura com eficiência, rende bastante e cuida das suas mãos.',
+  },
+  {
+    id: 'detergente-5l',
+    name: 'Detergente',
+    qty: '5 Litros',
+    price: 22.48,
+    img: detergente5l,
+    desc: 'Remove gordura com eficiência, rende bastante e cuida das suas mãos.',
+  },
+  {
+    id: 'desinfetante-1l',
+    name: 'Desinfetante',
+    qty: '1 Litro',
+    price: 4.5,
+    img: desinfetante1l,
+    desc: 'Elimina germes e bactérias com perfume agradável e proteção prolongada.',
+  },
+  {
+    id: 'desinfetante',
+    name: 'Desinfetante',
+    qty: '2 Litros',
+    price: 8.99,
+    img: desinfetante,
+    desc: 'Elimina germes e bactérias com perfume agradável e proteção prolongada.',
+  },
+  {
+    id: 'desinfetante-3l',
+    name: 'Desinfetante',
+    qty: '3 Litros',
+    price: 13.49,
+    img: desinfetante3l,
+    desc: 'Elimina germes e bactérias com perfume agradável e proteção prolongada.',
+  },
+  {
+    id: 'desinfetante-5l',
+    name: 'Desinfetante',
+    qty: '5 Litros',
+    price: 20.0,
+    img: desinfetante5l,
+    desc: 'Elimina germes e bactérias com perfume agradável e proteção prolongada.',
+  },
+  {
+    id: 'sabao-1l',
+    name: 'Sabão Líquido',
+    qty: '1 Litro',
+    price: 5.0,
+    img: sabao,
+    desc: 'Limpeza profunda para o dia a dia, com ótimo rendimento e perfume.',
+  },
+  {
+    id: 'sabao',
+    name: 'Sabão Líquido',
+    qty: '2 Litros',
+    price: 9.99,
+    img: sabao,
+    desc: 'Limpeza profunda para o dia a dia, com ótimo rendimento e perfume.',
+  },
+  {
+    id: 'sabao-3l',
+    name: 'Sabão Líquido',
+    qty: '3 Litros',
+    price: 14.99,
+    img: sabao,
+    desc: 'Limpeza profunda para o dia a dia, com ótimo rendimento e perfume.',
+  },
+  {
+    id: 'sabao-5l',
+    name: 'Sabão Líquido',
+    qty: '5 Litros',
+    price: 24.99,
+    img: sabao,
+    desc: 'Limpeza profunda para o dia a dia, com ótimo rendimento e perfume.',
+  },
 ]
 
-export const kitBottles = [cloro, amaciante, detergente, desinfetante, sabao]
+export const kitBottles = [cloroKit, amacianteKit, detergenteKit, desinfetanteKit, sabao]
 
 export const kits = [
   { id: 'kit-1l', label: '1 LITRO', price: '23,99', priceValue: 23.99 },
@@ -25,6 +197,36 @@ export const kits = [
 ]
 
 export const paymentMethods = ['Pix', 'Dinheiro', 'Cartão de Crédito', 'Cartão de Débito']
+
+export const showcaseServices = [
+  {
+    id: 'dedetizacao',
+    icon: 'bug',
+    name: 'Dedetização',
+    text: 'Controle eficiente de pragas urbanas com segurança e eficácia.',
+    href: '#servicos',
+  },
+  {
+    id: 'limpeza',
+    icon: 'mop',
+    name: 'Serviços de Limpeza',
+    text: 'Limpeza residencial, comercial e pós-obra com alto padrão.',
+    href: '#servicos',
+  },
+  {
+    id: 'cloro',
+    icon: 'bottle',
+    name: 'Cloro e Desinfetantes',
+    text: 'Produtos de qualidade para higienização e proteção.',
+    href: '#produtos',
+  },
+]
+
+export const quickOrderProducts = [
+  { id: 'cloro-5l', name: 'Cloro 5L', price: '15,00', img: cloro5l },
+  { id: 'desinfetante-5l', name: 'Desinfetante 5L', price: '20,00', img: desinfetante5l },
+  { id: 'cloro-10l', name: 'Cloro 10L', price: '25,00', img: cloro5l },
+]
 
 export const galleryCategories = [
   { id: 'todos', label: 'Todos' },
