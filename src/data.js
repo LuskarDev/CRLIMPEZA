@@ -28,12 +28,6 @@ export const WHATSAPP_NUMBER = '5521986253642'
 export const WHATSAPP_DISPLAY = '(21) 98625-3642'
 export const REVIEW_WHATSAPP_NUMBER = '5521971447401'
 
-// Regras do programa de indicação: quem indica acumula pontos a cada pedido feito com seu cupom
-export const REFERRAL_DISCOUNT_THRESHOLD = 3
-export const REFERRAL_DISCOUNT_LABEL = 'Desconto especial'
-export const REFERRAL_GIFT_THRESHOLD = 5
-export const REFERRAL_GIFT_LABEL = 'Brinde exclusivo'
-
 export const products = [
   {
     id: 'cloro-1l',
@@ -240,6 +234,7 @@ export const quickOrderProducts = [
 
 export const galleryCategories = [
   { id: 'todos', label: 'Todos' },
+  { id: 'limpeza-geral', label: 'Limpeza Geral' },
   { id: 'caixa-dagua', label: "Caixa d'Água" },
   { id: 'dedetizacao', label: 'Dedetização' },
   { id: 'limpeza-terreno', label: 'Limpeza de Terreno' },
@@ -247,6 +242,125 @@ export const galleryCategories = [
 ]
 
 export const galleryItems = [
+  {
+    id: 'lg-foto-1',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Antes',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-1',
+  },
+  {
+    id: 'lg-foto-2',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Antes',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-2',
+  },
+  {
+    id: 'lg-foto-3',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Antes',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-3',
+  },
+  {
+    id: 'lg-foto-4',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Durante',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-4',
+  },
+  {
+    id: 'lg-foto-5',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Durante',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-5',
+  },
+  {
+    id: 'lg-foto-6',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Depois (Cozinha)',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-6',
+  },
+  {
+    id: 'lg-foto-7',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Depois (Cozinha)',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-7',
+  },
+  {
+    id: 'lg-foto-8',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Depois (Cozinha)',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-8',
+  },
+  {
+    id: 'lg-foto-9',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Depois (Cozinha)',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-9',
+  },
+  {
+    id: 'lg-foto-10',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Durante',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-10',
+  },
+  {
+    id: 'lg-foto-11',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Depois (Sala)',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-11',
+  },
+  {
+    id: 'lg-foto-12',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Depois (Corredor)',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-12',
+  },
+  {
+    id: 'lg-foto-13',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Depois (Cozinha)',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-13',
+  },
+  {
+    id: 'lg-foto-14',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Depois (Banheiro)',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-14',
+  },
+  {
+    id: 'lg-foto-15',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Depois (Banheiro)',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-15',
+  },
+  {
+    id: 'lg-foto-16',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Depois (Sala de Jantar)',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-16',
+  },
+  {
+    id: 'lg-foto-17',
+    category: 'limpeza-geral',
+    title: 'Limpeza Geral - Depois (Banheiro)',
+    location: 'São Gonçalo - RJ',
+    img: 'limpeza-geral-foto-17',
+  },
   {
     id: 'gt-antes-1',
     category: 'limpeza-terreno',

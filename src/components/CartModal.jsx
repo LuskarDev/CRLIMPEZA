@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useCart } from '../context/CartContext'
-import { useReferral } from '../context/ReferralContext'
-import { paymentMethods, WHATSAPP_NUMBER, REFERRAL_DISCOUNT_THRESHOLD, REFERRAL_GIFT_THRESHOLD } from '../data'
+import { paymentMethods, WHATSAPP_NUMBER } from '../data'
 import useFocusTrap from '../hooks/useFocusTrap'
+import { recordOrder } from '../utils/customerTracking'
 
 function formatBRL(v) {
   return v.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })
@@ -10,7 +10,6 @@ function formatBRL(v) {
 
 export default function CartModal() {
   const { items, totalPrice, isOpen, closeCart, updateQuantity, removeFromCart, clearCart } = useCart()
-  const { referralCode, setReferralCode } = useReferral()
   const modalRef = useFocusTrap(isOpen)
 
   const [nome, setNome] = useState('')
@@ -59,11 +58,11 @@ export default function CartModal() {
       lines.push(`💵 Troco para: R$ ${formatBRL(valorPagoNum)}`)
       if (troco !== null) lines.push(`🔁 Troco a receber: R$ ${formatBRL(troco)}`)
     }
-    if (referralCode.trim()) {
-      lines.push('', `🎁 Cupom de indicação: ${referralCode.trim()}`)
-      lines.push(
-        `(Validar indicações desse cupom: ${REFERRAL_DISCOUNT_THRESHOLD} pedidos = desconto especial, ${REFERRAL_GIFT_THRESHOLD}+ pedidos = brinde exclusivo)`
-      )
+
+    const summary = items.map((it) => `${it.name}${it.qtyLabel ? ` (${it.qtyLabel})` : ''} x${it.quantity}`).join(', ')
+    const tracking = recordOrder({ type: 'carrinho', summary, total: totalPrice })
+    if (tracking.orderNumber) {
+      lines.push('', `📊 ${tracking.ordinalLabel}`, `🔗 Origem: ${tracking.sourceLabel}`)
     }
 
     const msg = encodeURIComponent(lines.join('\n'))
@@ -186,17 +185,6 @@ export default function CartModal() {
                       value={referencia}
                       onChange={(e) => setReferencia(e.target.value)}
                     />
-                  </div>
-
-                  <div className="form-field form-field-wide">
-                    <label>Cupom de indicação (opcional)</label>
-                    <input
-                      type="text"
-                      placeholder="Nome de quem te indicou"
-                      value={referralCode}
-                      onChange={(e) => setReferralCode(e.target.value)}
-                    />
-                    <span className="form-hint">Foi indicado por alguém? Coloque o nome ou cupom aqui para ajudar essa pessoa a ganhar recompensas.</span>
                   </div>
 
                   {isDinheiro && (

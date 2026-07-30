@@ -22,6 +22,16 @@ export default function BeforeAfter() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal as="div" className="ba-cta">
+          <p>Quer um resultado assim na sua casa ou empresa?</p>
+          <a className="btn btn-wa" href="#contratar-servico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M4 6h16M4 12h16M4 18h10" strokeLinecap="round" />
+            </svg>
+            Quero contratar um serviço
+          </a>
+        </Reveal>
       </div>
     </section>
   )

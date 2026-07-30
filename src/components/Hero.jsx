@@ -1,4 +1,4 @@
-import heroVisual from '../assets/hero-visual-new.jpg'
+import heroVisual from '../assets/hero-visual.jpg'
 import Reveal from './Reveal'
 
 export default function Hero() {
@@ -40,22 +40,9 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        <Reveal as="div" className="hero-visual" variant="scale" delay={120}>
+        <div className="hero-visual">
           <div className="hero-image" style={{ backgroundImage: `url(${heroVisual})` }} />
-
-          <div className="hero-float-card">
-            <span className="hero-float-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-                <path d="M12 2l8 3.5v5.2c0 5-3.4 8.9-8 10.3-4.6-1.4-8-5.3-8-10.3V5.5L12 2z" />
-                <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </span>
-            <div>
-              <strong>Compromisso com Excelência</strong>
-              <span>Atendimento ágil, seguro e personalizado.</span>
-            </div>
-          </div>
-        </Reveal>
+        </div>
       </div>
     </section>
   )

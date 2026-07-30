@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import InfoBar from './components/InfoBar'
@@ -14,35 +15,44 @@ import Footer from './components/Footer'
 import OrderModal from './components/OrderModal'
 import CartModal from './components/CartModal'
 import FloatCart from './components/FloatCart'
+import CookieConsent from './components/CookieConsent'
 import { OrderModalProvider } from './context/OrderModalContext'
 import { CartProvider } from './context/CartContext'
-import { ReferralProvider } from './context/ReferralContext'
+import { getConsent } from './utils/cookieConsent'
+import { detectVisitSource } from './utils/customerTracking'
 
 export default function App() {
+  // Só identifica a origem da visita (link/indicação/campanha) se o
+  // visitante já tiver aceitado os cookies em uma visita anterior.
+  useEffect(() => {
+    if (getConsent() === 'accepted') detectVisitSource()
+  }, [])
+
   return (
-    <ReferralProvider>
-      <CartProvider>
-        <OrderModalProvider>
-          <Header />
-          <main>
-            <Hero />
-            <InfoBar />
-            <Banners />
-            <Products />
-            <Kits />
-            <BeforeAfter />
-            <Gallery />
-            <ServiceForm />
-            <Indique />
-            <WhyChoose />
-            <Testimonials />
-          </main>
-          <Footer />
-          <OrderModal />
-          <CartModal />
-          <FloatCart />
-        </OrderModalProvider>
-      </CartProvider>
-    </ReferralProvider>
+    <CartProvider>
+      <OrderModalProvider>
+        <Header />
+        <main>
+          {/* Ordem pensada para o funil de conversão:
+              Hero -> Produtos -> Kits -> Transformações reais (com CTA) -> Galeria -> Contratar serviço */}
+          <Hero />
+          <InfoBar />
+          <Banners />
+          <Products />
+          <Kits />
+          <BeforeAfter />
+          <Gallery />
+          <ServiceForm />
+          <WhyChoose />
+          <Testimonials />
+          <Indique />
+        </main>
+        <Footer />
+        <OrderModal />
+        <CartModal />
+        <FloatCart />
+        <CookieConsent />
+      </OrderModalProvider>
+    </CartProvider>
   )
 }

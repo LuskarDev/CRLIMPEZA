@@ -3,6 +3,7 @@ import IconSelect from './IconSelect'
 import Reveal from './Reveal'
 import serviceIllustration from '../assets/service-illustration.svg'
 import { services, WHATSAPP_NUMBER } from '../data'
+import { recordOrder } from '../utils/customerTracking'
 
 const serviceOptions = services.map((s) => ({ value: s.id, label: s.name, icon: s.icon }))
 
@@ -30,6 +31,11 @@ export default function ServiceForm() {
     if (referencia.trim()) lines.push(`📌 Ponto de referência: ${referencia}`)
     if (detalhes.trim()) lines.push(`📝 Detalhes: ${detalhes}`)
 
+    const tracking = recordOrder({ type: 'servico', summary: servico.name })
+    if (tracking.orderNumber) {
+      lines.push('', `📊 ${tracking.ordinalLabel}`, `🔗 Origem: ${tracking.sourceLabel}`)
+    }
+
     const msg = encodeURIComponent(lines.join('\n'))
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, '_blank', 'noopener')
   }
@@ -46,6 +52,22 @@ export default function ServiceForm() {
         <div className="service-form-layout">
           <Reveal as="div" className="service-form-visual" variant="left" delay={40}>
             <img src={serviceIllustration} alt="Atendimento rápido e profissional CR Limpeza" />
+
+            <div className="service-price-note">
+              <span className="service-price-note-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 7v5l3 3" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              <div>
+                <strong>Preço sob medida para cada serviço</strong>
+                <p>
+                  O valor varia conforme o tamanho do local e a complexidade do serviço. Envie os dados ao lado e
+                  receba um orçamento gratuito, sem compromisso, em poucos minutos.
+                </p>
+              </div>
+            </div>
           </Reveal>
 
           <Reveal as="form" className="form-card form-card-split" delay={100} onSubmit={handleSubmit}>

@@ -8,6 +8,7 @@ import useFocusTrap from '../hooks/useFocusTrap'
 const INITIAL_VISIBLE_COUNT = 8
 
 const categoryIcons = {
+  'limpeza-geral': 'mop',
   'caixa-dagua': 'bucket',
   dedetizacao: 'bug',
   'limpeza-terreno': 'spray',

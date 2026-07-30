@@ -101,6 +101,25 @@ import calcada2Foto2 from './assets/gallery/calcada2/foto-2.jpg'
 import calcada2Foto3 from './assets/gallery/calcada2/foto-3.jpg'
 import calcada2Foto4 from './assets/gallery/calcada2/foto-4.jpg'
 
+// Fotos reais de limpeza geral residencial (antes, durante e depois)
+import limpezaGeralFoto1 from './assets/gallery/limpeza-geral/foto-1.jpg'
+import limpezaGeralFoto2 from './assets/gallery/limpeza-geral/foto-2.jpg'
+import limpezaGeralFoto3 from './assets/gallery/limpeza-geral/foto-3.jpg'
+import limpezaGeralFoto4 from './assets/gallery/limpeza-geral/foto-4.jpg'
+import limpezaGeralFoto5 from './assets/gallery/limpeza-geral/foto-5.jpg'
+import limpezaGeralFoto6 from './assets/gallery/limpeza-geral/foto-6.jpg'
+import limpezaGeralFoto7 from './assets/gallery/limpeza-geral/foto-7.jpg'
+import limpezaGeralFoto8 from './assets/gallery/limpeza-geral/foto-8.jpg'
+import limpezaGeralFoto9 from './assets/gallery/limpeza-geral/foto-9.jpg'
+import limpezaGeralFoto10 from './assets/gallery/limpeza-geral/foto-10.jpg'
+import limpezaGeralFoto11 from './assets/gallery/limpeza-geral/foto-11.jpg'
+import limpezaGeralFoto12 from './assets/gallery/limpeza-geral/foto-12.jpg'
+import limpezaGeralFoto13 from './assets/gallery/limpeza-geral/foto-13.jpg'
+import limpezaGeralFoto14 from './assets/gallery/limpeza-geral/foto-14.jpg'
+import limpezaGeralFoto15 from './assets/gallery/limpeza-geral/foto-15.jpg'
+import limpezaGeralFoto16 from './assets/gallery/limpeza-geral/foto-16.jpg'
+import limpezaGeralFoto17 from './assets/gallery/limpeza-geral/foto-17.jpg'
+
 export const galleryImages = {
   'terreno-antes-1': terrenoAntes1,
   'terreno-antes-2': terrenoAntes2,
@@ -176,4 +195,21 @@ export const galleryImages = {
   'calcada2-foto-2': calcada2Foto2,
   'calcada2-foto-3': calcada2Foto3,
   'calcada2-foto-4': calcada2Foto4,
+  'limpeza-geral-foto-1': limpezaGeralFoto1,
+  'limpeza-geral-foto-2': limpezaGeralFoto2,
+  'limpeza-geral-foto-3': limpezaGeralFoto3,
+  'limpeza-geral-foto-4': limpezaGeralFoto4,
+  'limpeza-geral-foto-5': limpezaGeralFoto5,
+  'limpeza-geral-foto-6': limpezaGeralFoto6,
+  'limpeza-geral-foto-7': limpezaGeralFoto7,
+  'limpeza-geral-foto-8': limpezaGeralFoto8,
+  'limpeza-geral-foto-9': limpezaGeralFoto9,
+  'limpeza-geral-foto-10': limpezaGeralFoto10,
+  'limpeza-geral-foto-11': limpezaGeralFoto11,
+  'limpeza-geral-foto-12': limpezaGeralFoto12,
+  'limpeza-geral-foto-13': limpezaGeralFoto13,
+  'limpeza-geral-foto-14': limpezaGeralFoto14,
+  'limpeza-geral-foto-15': limpezaGeralFoto15,
+  'limpeza-geral-foto-16': limpezaGeralFoto16,
+  'limpeza-geral-foto-17': limpezaGeralFoto17,
 }
