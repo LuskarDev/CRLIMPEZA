@@ -19,10 +19,20 @@ import desinfetante3l from './assets/products/desinfetante-3l.png'
 import desinfetante5l from './assets/products/desinfetante-5l.png'
 import desinfetanteKit from './assets/products/desinfetante-kit.png'
 import sabao from './assets/products/sabao.png'
+import kit1lImg from './assets/kits/kit-1l.jpg'
+import kit2lImg from './assets/kits/kit-2l.jpg'
+import kit3lImg from './assets/kits/kit-3l.jpg'
+import kit5lImg from './assets/kits/kit-5l.jpg'
 
 export const WHATSAPP_NUMBER = '5521986253642'
 export const WHATSAPP_DISPLAY = '(21) 98625-3642'
 export const REVIEW_WHATSAPP_NUMBER = '5521971447401'
+
+// Regras do programa de indicação: quem indica acumula pontos a cada pedido feito com seu cupom
+export const REFERRAL_DISCOUNT_THRESHOLD = 3
+export const REFERRAL_DISCOUNT_LABEL = 'Desconto especial'
+export const REFERRAL_GIFT_THRESHOLD = 5
+export const REFERRAL_GIFT_LABEL = 'Brinde exclusivo'
 
 export const products = [
   {
@@ -190,10 +200,10 @@ export const products = [
 export const kitBottles = [cloroKit, amacianteKit, detergenteKit, desinfetanteKit, sabao]
 
 export const kits = [
-  { id: 'kit-1l', label: '1 LITRO', price: '23,99', priceValue: 23.99 },
-  { id: 'kit-2l', label: '2 LITROS', price: '39,90', priceValue: 39.9 },
-  { id: 'kit-3l', label: '3 LITROS', price: '59,99', priceValue: 59.99 },
-  { id: 'kit-5l', label: '5 LITROS', price: '119,90', priceValue: 119.9 },
+  { id: 'kit-1l', label: '1 LITRO', price: '23,99', priceValue: 23.99, img: kit1lImg },
+  { id: 'kit-2l', label: '2 LITROS', price: '39,90', priceValue: 39.9, img: kit2lImg },
+  { id: 'kit-3l', label: '3 LITROS', price: '59,99', priceValue: 59.99, img: kit3lImg },
+  { id: 'kit-5l', label: '5 LITROS', price: '119,90', priceValue: 119.9, img: kit5lImg },
 ]
 
 export const paymentMethods = ['Pix', 'Dinheiro', 'Cartão de Crédito', 'Cartão de Débito']

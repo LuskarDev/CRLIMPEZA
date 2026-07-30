@@ -16,30 +16,33 @@ import CartModal from './components/CartModal'
 import FloatCart from './components/FloatCart'
 import { OrderModalProvider } from './context/OrderModalContext'
 import { CartProvider } from './context/CartContext'
+import { ReferralProvider } from './context/ReferralContext'
 
 export default function App() {
   return (
-    <CartProvider>
-      <OrderModalProvider>
-        <Header />
-        <main>
-          <Hero />
-          <InfoBar />
-          <Banners />
-          <Products />
-          <Kits />
-          <BeforeAfter />
-          <Gallery />
-          <ServiceForm />
-          <Indique />
-          <WhyChoose />
-          <Testimonials />
-        </main>
-        <Footer />
-        <OrderModal />
-        <CartModal />
-        <FloatCart />
-      </OrderModalProvider>
-    </CartProvider>
+    <ReferralProvider>
+      <CartProvider>
+        <OrderModalProvider>
+          <Header />
+          <main>
+            <Hero />
+            <InfoBar />
+            <Banners />
+            <Products />
+            <Kits />
+            <BeforeAfter />
+            <Gallery />
+            <ServiceForm />
+            <Indique />
+            <WhyChoose />
+            <Testimonials />
+          </main>
+          <Footer />
+          <OrderModal />
+          <CartModal />
+          <FloatCart />
+        </OrderModalProvider>
+      </CartProvider>
+    </ReferralProvider>
   )
 }

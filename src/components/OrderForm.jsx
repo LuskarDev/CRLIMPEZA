@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import IconSelect from './IconSelect'
-import { products, kits, kitBottles, paymentMethods, WHATSAPP_NUMBER } from '../data'
+import { products, kits, kitBottles, paymentMethods, WHATSAPP_NUMBER, REFERRAL_DISCOUNT_THRESHOLD, REFERRAL_GIFT_THRESHOLD } from '../data'
+import { useReferral } from '../context/ReferralContext'
 
 const orderableItems = [
   ...products.map((p) => ({
@@ -22,6 +23,7 @@ function formatBRL(v) {
 }
 
 export default function OrderForm() {
+  const { referralCode, setReferralCode } = useReferral()
   const [nome, setNome] = useState('')
   const [endereco, setEndereco] = useState('')
   const [referencia, setReferencia] = useState('')
@@ -59,6 +61,12 @@ export default function OrderForm() {
     if (isDinheiro && valorPago !== '') {
       lines.push(`💵 Troco para: R$ ${formatBRL(valorPagoNum)}`)
       if (troco !== null) lines.push(`🔁 Troco a receber: R$ ${formatBRL(troco)}`)
+    }
+    if (referralCode.trim()) {
+      lines.push('', `🎁 Cupom de indicação: ${referralCode.trim()}`)
+      lines.push(
+        `(Validar indicações desse cupom: ${REFERRAL_DISCOUNT_THRESHOLD} pedidos = ${'desconto especial'}, ${REFERRAL_GIFT_THRESHOLD}+ pedidos = ${'brinde exclusivo'})`
+      )
     }
 
     const msg = encodeURIComponent(lines.join('\n'))
@@ -138,6 +146,17 @@ export default function OrderForm() {
                 value={referencia}
                 onChange={(e) => setReferencia(e.target.value)}
               />
+            </div>
+
+            <div className="form-field form-field-wide">
+              <label>Cupom de indicação (opcional)</label>
+              <input
+                type="text"
+                placeholder="Nome de quem te indicou"
+                value={referralCode}
+                onChange={(e) => setReferralCode(e.target.value)}
+              />
+              <span className="form-hint">Foi indicado por alguém? Coloque o nome ou cupom aqui para ajudar essa pessoa a ganhar recompensas.</span>
             </div>
 
             {isDinheiro && (

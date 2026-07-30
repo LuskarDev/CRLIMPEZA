@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { kits, kitBottles } from '../data'
+import { kits } from '../data'
 import { useOrderModal } from '../context/OrderModalContext'
 import { useCart } from '../context/CartContext'
 import Icon from './Icon'
@@ -34,13 +34,7 @@ export default function Kits() {
         <div className="kits-grid">
           {kits.map((kit, i) => (
             <Reveal as="div" className="kit-card" key={kit.id} delay={i * 100}>
-              <span className="kit-ribbon">KIT CR LIMPEZA</span>
-              <h3>{kit.label}</h3>
-              <div className="kit-bottles">
-                {kitBottles.map((b, i2) => (
-                  <img src={b} alt="" key={i2} />
-                ))}
-              </div>
+              <img className="kit-image" src={kit.img} alt={`Kit CR Limpeza ${kit.label}`} />
               <div className="kit-price">R$ {kit.price}</div>
               <div className="kit-actions">
                 <button className="btn btn-green btn-block" onClick={() => openOrderModal(kit.id)}>

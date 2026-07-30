@@ -1,4 +1,4 @@
-import heroVisual from '../assets/hero-visual.jpg'
+import heroVisual from '../assets/hero-visual-new.jpg'
 import Reveal from './Reveal'
 
 export default function Hero() {
