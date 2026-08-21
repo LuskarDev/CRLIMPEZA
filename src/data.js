@@ -41,7 +41,7 @@ export const products = [
     id: 'cloro',
     name: 'Cloro',
     qty: '2 Litros',
-    price: 8.99,
+    price:  4.49,
     img: cloro,
     desc: 'Ideal para desinfecção de pisos, ralos, banheiros e áreas externas.',
   },
@@ -194,9 +194,9 @@ export const products = [
 export const kitBottles = [cloroKit, amacianteKit, detergenteKit, desinfetanteKit, sabao]
 
 export const kits = [
-  { id: 'kit-1l', label: '1 LITRO', price: '23,99', priceValue: 23.99, img: kit1lImg },
-  { id: 'kit-2l', label: '2 LITROS', price: '39,90', priceValue: 39.9, img: kit2lImg },
-  { id: 'kit-3l', label: '3 LITROS', price: '59,99', priceValue: 59.99, img: kit3lImg },
+  { id: 'kit-1l', label: '1 LITRO', price: '29,99', priceValue: 29.99, img: kit1lImg },
+  { id: 'kit-2l', label: '2 LITROS', price: '49,90', priceValue: 49.9, img: kit2lImg },
+  { id: 'kit-3l', label: '3 LITROS', price: '69,99', priceValue: 69.99, img: kit3lImg },
   { id: 'kit-5l', label: '5 LITROS', price: '119,90', priceValue: 119.9, img: kit5lImg },
 ]
 
