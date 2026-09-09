@@ -1091,6 +1091,7 @@ ul {
   gap: 10px;
 }
 
+<<<<<<< HEAD
 /* ---------- Lixeiras de Ferro ---------- */
 .lixeiras-section {
   padding: 72px 0;
@@ -1390,6 +1391,8 @@ ul {
   color: rgba(255, 255, 255, 0.7);
 }
 
+=======
+>>>>>>> ca5454de1436523bf7e6c2b77b0c64353dde1a98
 /* ---------- Services showcase ---------- */
 .services-section {
   padding: 72px 0;
@@ -2720,6 +2723,7 @@ ul {
   }
 }
 
+<<<<<<< HEAD
 @media (max-width: 900px) {
   .lixeiras-layout {
     grid-template-columns: 1fr;
@@ -2752,6 +2756,8 @@ ul {
   }
 }
 
+=======
+>>>>>>> ca5454de1436523bf7e6c2b77b0c64353dde1a98
 @media (max-width: 980px) {
   .hero-split {
     grid-template-columns: 1fr;
