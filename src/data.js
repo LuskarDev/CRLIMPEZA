@@ -960,18 +960,14 @@ export const footerLinks = [
   { label: 'Início', href: '#inicio' },
   { label: 'Produtos', href: '#produtos' },
   { label: 'Kits', href: '#kits' },
-<<<<<<< HEAD
   { label: 'Lixeiras de Ferro', href: '#lixeiras' },
   { label: 'Sinuca Jovane', href: '#sinuca' },
-=======
->>>>>>> ca5454de1436523bf7e6c2b77b0c64353dde1a98
   { label: 'Serviços', href: '#servicos' },
   { label: 'Galeria', href: '#galeria' },
   { label: 'Indique e Ganhe', href: '#indique' },
   { label: 'Sobre', href: '#sobre' },
   { label: 'Contato', href: '#contato' },
 ]
-<<<<<<< HEAD
 
 // ---------- Lixeiras de Ferro (Carlos Roberto R. Vasconcellos) ----------
 export const lixeiraInfo = {
@@ -1009,5 +1005,3 @@ export const sinucaProducts = [
   { id: 'pebolim', name: 'Pebolim', tag: 'Profissional', img: 'pebolim' },
   { id: 'fliperama', name: 'Fliperama', tag: 'Multi Games', img: 'fliperama' },
 ]
-=======
->>>>>>> ca5454de1436523bf7e6c2b77b0c64353dde1a98

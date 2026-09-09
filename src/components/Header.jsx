@@ -6,11 +6,8 @@ const navLinks = [
   { label: 'Sobre Nós', href: '#sobre' },
   { label: 'Serviços', href: '#contratar-servico' },
   { label: 'Produtos', href: '#produtos' },
-<<<<<<< HEAD
   { label: 'Lixeiras', href: '#lixeiras' },
   { label: 'Sinuca', href: '#sinuca' },
-=======
->>>>>>> ca5454de1436523bf7e6c2b77b0c64353dde1a98
   { label: 'Galeria', href: '#galeria-completa' },
   { label: 'Contato', href: '#contato' },
 ]

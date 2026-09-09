@@ -5,11 +5,8 @@ import InfoBar from './components/InfoBar'
 import Banners from './components/Banners'
 import Products from './components/Products'
 import Kits from './components/Kits'
-<<<<<<< HEAD
 import Lixeiras from './components/Lixeiras'
 import Sinuca from './components/Sinuca'
-=======
->>>>>>> ca5454de1436523bf7e6c2b77b0c64353dde1a98
 import BeforeAfter from './components/BeforeAfter'
 import Gallery from './components/Gallery'
 import ServiceForm from './components/ServiceForm'
@@ -39,21 +36,14 @@ export default function App() {
         <Header />
         <main>
           {/* Ordem pensada para o funil de conversão:
-<<<<<<< HEAD
               Hero -> Produtos -> Kits -> Lixeiras -> Sinuca -> Transformações reais (com CTA) -> Galeria -> Contratar serviço */}
-=======
-              Hero -> Produtos -> Kits -> Transformações reais (com CTA) -> Galeria -> Contratar serviço */}
->>>>>>> ca5454de1436523bf7e6c2b77b0c64353dde1a98
           <Hero />
           <InfoBar />
           <Banners />
           <Products />
           <Kits />
-<<<<<<< HEAD
           <Lixeiras />
           <Sinuca />
-=======
->>>>>>> ca5454de1436523bf7e6c2b77b0c64353dde1a98
           <BeforeAfter />
           <Gallery />
           <ServiceForm />
