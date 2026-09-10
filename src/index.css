@@ -2758,7 +2758,7 @@ ul {
   }
   .hero-visual {
     order: -1;
-    min-height: 300px;
+    width: 100%;
   }
   .hero-image::before {
     background: linear-gradient(180deg, rgba(10, 37, 87, 0) 55%, var(--navy-2) 100%);
@@ -2831,6 +2831,20 @@ ul {
     width: 100%;
     overflow-x: auto;
   }
+}
+
+@media (max-width: 620px) {
+
+
+  div .hero-image {
+    background-size: cover;
+  }
+
+  div .hero-visual{
+    min-height: 220px!important;
+    width: 100%;
+  }
+
 }
 
 @media (max-width: 760px) {
@@ -3602,6 +3616,10 @@ ul {
     padding: 16px;
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .cookie-consent p {
+    flex: 1;
   }
   .cookie-consent-actions {
     justify-content: stretch;
