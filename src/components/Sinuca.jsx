@@ -2,16 +2,16 @@ import { sinucaInfo, sinucaProducts, WHATSAPP_NUMBER } from '../data'
 import Icon from './Icon'
 import Reveal from './Reveal'
 
-const productImages = import.meta.glob('../assets/sinuca/produtos/*.jpg', { eager: true, import: 'default' })
+const productImages = import.meta.glob('../assets/sinuca/produtos/*.png', { eager: true, import: 'default' })
 
 function getProductImg(key) {
-  const match = Object.entries(productImages).find(([path]) => path.includes(`/${key}.jpg`))
+  const match = Object.entries(productImages).find(([path]) => path.includes(`/${key}.png`))
   return match ? match[1] : undefined
 }
 
 function waLinkFor(name) {
   const msg = encodeURIComponent(
-    `Olá! Vi a ${name} da Sinuca Jovane no site e gostaria de um orçamento sem compromisso!`
+    `Olá! Vi a ${name} no site e gostaria de um orçamento sem compromisso!`
   )
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`
 }
@@ -64,21 +64,6 @@ export default function Sinuca() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal as="div" className="sinuca-footer" delay={200}>
-          <div>
-            <strong>Vendedor: {sinucaInfo.sellerName}</strong>
-            <span>{sinucaInfo.coverage}</span>
-          </div>
-          <a
-            className="btn btn-navy"
-            href={waLinkFor('Sinuca Jovane')}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Falar com o vendedor
-          </a>
-        </Reveal>
       </div>
     </section>
   )
