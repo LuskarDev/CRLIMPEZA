@@ -5,7 +5,7 @@ const CartContext = createContext(null)
 
 // Catálogo único (produtos + kits) indexado por id, usado para resolver os itens do carrinho
 const catalog = new Map([
-  ...products.map((p) => [p.id, { id: p.id, name: p.name, qtyLabel: p.qty, unitPrice: p.price, img: p.img }]),
+  ...products.filter((p) => p.price != null).map((p) => [p.id, { id: p.id, name: p.name, qtyLabel: p.qty, unitPrice: p.price, img: p.img }]),
   ...kits.map((k) => [
     k.id,
     { id: k.id, name: `Kit CR Limpeza - ${k.label}`, qtyLabel: null, unitPrice: k.priceValue, img: kitBottles[0] },

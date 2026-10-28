@@ -1,4 +1,5 @@
-import { products } from '../data'
+import { useState } from 'react'
+import { products, productCategories } from '../data'
 import Icon from './Icon'
 import Reveal from './Reveal'
 import ProductsCarousel from './ProductsCarousel'
@@ -19,6 +20,8 @@ const deliveryFeatures = [
 ]
 
 export default function Products() {
+  const [category, setCategory] = useState('todos')
+  const visible = category === 'todos' ? products : products.filter((p) => p.category === category)
   return (
     <section className="products-section" id="produtos">
       <div className="wrap">
@@ -55,8 +58,23 @@ export default function Products() {
           <h2>Conheça nossa linha de produtos</h2>
         </Reveal>
 
+        <div className="products-tabs" role="tablist" aria-label="Categorias de produtos">
+          {productCategories.map((c) => (
+            <button
+              key={c.id}
+              type="button"
+              role="tab"
+              aria-selected={category === c.id}
+              className={`products-tab${category === c.id ? ' is-active' : ''}`}
+              onClick={() => setCategory(c.id)}
+            >
+              {c.label}
+            </button>
+          ))}
+        </div>
+
         <Reveal as="div">
-          <ProductsCarousel products={products} />
+          <ProductsCarousel key={category} products={visible} />
         </Reveal>
 
         <Reveal as="div" className="products-delivery-strip" delay={100}>

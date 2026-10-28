@@ -5,6 +5,7 @@ import InfoBar from './components/InfoBar'
 import Banners from './components/Banners'
 import Products from './components/Products'
 import Kits from './components/Kits'
+import ComingSoon from './components/ComingSoon'
 import Lixeiras from './components/Lixeiras'
 import Sinuca from './components/Sinuca'
 import BeforeAfter from './components/BeforeAfter'
@@ -42,6 +43,7 @@ export default function App() {
           <Banners />
           <Products />
           <Kits />
+          <ComingSoon />
           <Lixeiras />
           <Sinuca />
           <BeforeAfter />

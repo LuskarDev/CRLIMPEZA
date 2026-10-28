@@ -6,7 +6,7 @@ import useFocusTrap from '../hooks/useFocusTrap'
 import { recordOrder } from '../utils/customerTracking'
 
 const orderableItems = [
-  ...products.map((p) => ({
+  ...products.filter((p) => p.price != null).map((p) => ({
     value: p.id,
     label: `${p.name} - ${p.qty} (R$ ${p.price.toFixed(2).replace('.', ',')})`,
     img: p.img,

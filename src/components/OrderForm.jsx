@@ -3,7 +3,7 @@ import IconSelect from './IconSelect'
 import { products, kits, kitBottles, paymentMethods, WHATSAPP_NUMBER } from '../data'
 
 const orderableItems = [
-  ...products.map((p) => ({
+  ...products.filter((p) => p.price != null).map((p) => ({
     value: p.id,
     label: `${p.name} - ${p.qty} (R$ ${p.price.toFixed(2).replace('.', ',')})`,
     img: p.img,

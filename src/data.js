@@ -19,6 +19,26 @@ import desinfetante3l from './assets/products/desinfetante-3l.png'
 import desinfetante5l from './assets/products/desinfetante-5l.png'
 import desinfetanteKit from './assets/products/desinfetante-kit.png'
 import sabao from './assets/products/sabao.png'
+import cloro6l from './assets/products/cloro-6l.png'
+import ajax from './assets/products/ajax.png'
+import limpaAluminio500 from './assets/products/limpa-aluminio-500ml.png'
+import limpaAluminio1l from './assets/products/limpa-aluminio-1l.png'
+import removedor from './assets/products/removedor.png'
+import escovinha from './assets/products/escovinha.png'
+import microfibra from './assets/products/microfibra.png'
+import flanelaM from './assets/products/flanela-m.png'
+import flanelaP from './assets/products/flanela-p.png'
+import esponja from './assets/products/esponja.png'
+import afiacaoFacas from './assets/products/afiacao-facas.jpg'
+import prendedor from './assets/products/prendedor.png'
+import panoChao from './assets/products/pano-chao.png'
+import esponjaMagica from './assets/products/esponja-magica.png'
+import suporteCelular from './assets/products/suporte-celular.png'
+import ralador from './assets/products/ralador.png'
+import facaColorida from './assets/products/faca-colorida.png'
+import panoMagico from './assets/products/pano-magico.png'
+import panoMagicoKit7 from './assets/products/pano-magico-kit7.png'
+import panoMagicoKit5 from './assets/products/pano-magico-kit5.png'
 import kit1lImg from './assets/kits/kit-1l.jpg'
 import kit2lImg from './assets/kits/kit-2l.jpg'
 import kit3lImg from './assets/kits/kit-3l.jpg'
@@ -28,6 +48,16 @@ export const WHATSAPP_NUMBER = '5521986253642'
 export const WHATSAPP_DISPLAY = '(21) 98625-3642'
 export const REVIEW_WHATSAPP_NUMBER = '5521971447401'
 
+export const productCategories = [
+  { id: 'todos', label: 'Todos' },
+  { id: 'limpeza', label: 'Cloro e Limpeza' },
+  { id: 'pesada', label: 'Limpeza Pesada' },
+  { id: 'panos', label: 'Panos e Flanelas' },
+  { id: 'esponjas', label: 'Esponjas e Escovas' },
+  { id: 'utilidades', label: 'Utilidades' },
+  { id: 'afiacao', label: 'Afiação de Facas' },
+]
+
 export const products = [
   {
     id: 'cloro-1l',
@@ -36,14 +66,16 @@ export const products = [
     price: 4.5,
     img: cloro1l,
     desc: 'Ideal para desinfecção de pisos, ralos, banheiros e áreas externas.',
+    category: 'limpeza',
   },
   {
     id: 'cloro',
     name: 'Cloro',
     qty: '2 Litros',
-    price:  4.49,
+    price: 4.9,
     img: cloro,
     desc: 'Ideal para desinfecção de pisos, ralos, banheiros e áreas externas.',
+    category: 'limpeza',
   },
   {
     id: 'cloro-3l',
@@ -52,6 +84,7 @@ export const products = [
     price: 13.49,
     img: cloro3l,
     desc: 'Ideal para desinfecção de pisos, ralos, banheiros e áreas externas.',
+    category: 'limpeza',
   },
   {
     id: 'cloro-5l',
@@ -60,6 +93,7 @@ export const products = [
     price: 15.0,
     img: cloro5l,
     desc: 'Ideal para desinfecção de pisos, ralos, banheiros e áreas externas.',
+    category: 'limpeza',
   },
   {
     id: 'amaciante-1l',
@@ -68,6 +102,7 @@ export const products = [
     price: 5.0,
     img: amaciante1l,
     desc: 'Deixa suas roupas macias, cheirosas e com perfume de longa duração.',
+    category: 'limpeza',
   },
   {
     id: 'amaciante',
@@ -76,6 +111,7 @@ export const products = [
     price: 9.99,
     img: amaciante,
     desc: 'Deixa suas roupas macias, cheirosas e com perfume de longa duração.',
+    category: 'limpeza',
   },
   {
     id: 'amaciante-3l',
@@ -84,6 +120,7 @@ export const products = [
     price: 14.99,
     img: amaciante3l,
     desc: 'Deixa suas roupas macias, cheirosas e com perfume de longa duração.',
+    category: 'limpeza',
   },
   {
     id: 'amaciante-5l',
@@ -92,6 +129,7 @@ export const products = [
     price: 24.99,
     img: amaciante5l,
     desc: 'Deixa suas roupas macias, cheirosas e com perfume de longa duração.',
+    category: 'limpeza',
   },
   {
     id: 'detergente-1l',
@@ -100,6 +138,7 @@ export const products = [
     price: 4.5,
     img: detergente1l,
     desc: 'Remove gordura com eficiência, rende bastante e cuida das suas mãos.',
+    category: 'limpeza',
   },
   {
     id: 'detergente',
@@ -108,6 +147,7 @@ export const products = [
     price: 8.99,
     img: detergente,
     desc: 'Remove gordura com eficiência, rende bastante e cuida das suas mãos.',
+    category: 'limpeza',
   },
   {
     id: 'detergente-3l',
@@ -116,6 +156,7 @@ export const products = [
     price: 13.49,
     img: detergente3l,
     desc: 'Remove gordura com eficiência, rende bastante e cuida das suas mãos.',
+    category: 'limpeza',
   },
   {
     id: 'detergente-5l',
@@ -124,6 +165,7 @@ export const products = [
     price: 22.48,
     img: detergente5l,
     desc: 'Remove gordura com eficiência, rende bastante e cuida das suas mãos.',
+    category: 'limpeza',
   },
   {
     id: 'desinfetante-1l',
@@ -132,6 +174,7 @@ export const products = [
     price: 4.5,
     img: desinfetante1l,
     desc: 'Elimina germes e bactérias com perfume agradável e proteção prolongada.',
+    category: 'limpeza',
   },
   {
     id: 'desinfetante',
@@ -140,6 +183,7 @@ export const products = [
     price: 8.99,
     img: desinfetante,
     desc: 'Elimina germes e bactérias com perfume agradável e proteção prolongada.',
+    category: 'limpeza',
   },
   {
     id: 'desinfetante-3l',
@@ -148,6 +192,7 @@ export const products = [
     price: 13.49,
     img: desinfetante3l,
     desc: 'Elimina germes e bactérias com perfume agradável e proteção prolongada.',
+    category: 'limpeza',
   },
   {
     id: 'desinfetante-5l',
@@ -156,6 +201,7 @@ export const products = [
     price: 20.0,
     img: desinfetante5l,
     desc: 'Elimina germes e bactérias com perfume agradável e proteção prolongada.',
+    category: 'limpeza',
   },
   {
     id: 'sabao-1l',
@@ -164,6 +210,7 @@ export const products = [
     price: 5.0,
     img: sabao,
     desc: 'Limpeza profunda para o dia a dia, com ótimo rendimento e perfume.',
+    category: 'limpeza',
   },
   {
     id: 'sabao',
@@ -172,6 +219,7 @@ export const products = [
     price: 9.99,
     img: sabao,
     desc: 'Limpeza profunda para o dia a dia, com ótimo rendimento e perfume.',
+    category: 'limpeza',
   },
   {
     id: 'sabao-3l',
@@ -180,6 +228,7 @@ export const products = [
     price: 14.99,
     img: sabao,
     desc: 'Limpeza profunda para o dia a dia, com ótimo rendimento e perfume.',
+    category: 'limpeza',
   },
   {
     id: 'sabao-5l',
@@ -188,6 +237,250 @@ export const products = [
     price: 24.99,
     img: sabao,
     desc: 'Limpeza profunda para o dia a dia, com ótimo rendimento e perfume.',
+    category: 'limpeza',
+  },
+  {
+    id: 'cloro-6l',
+    name: 'Cloro',
+    qty: '6 Litros',
+    price: 18.0,
+    img: cloro6l,
+    desc: 'Bombona econômica para desinfecção de pisos, ralos, banheiros e áreas externas.',
+    category: 'limpeza',
+  },
+  {
+    id: 'ajax',
+    name: 'Limpeza Pesada Ajax',
+    qty: 'Garrafa',
+    price: null,
+    img: ajax,
+    desc: 'Limpeza pesada com perfume de limão. Consulte o preço e os tamanhos disponíveis.',
+    category: 'pesada',
+  },
+  {
+    id: 'limpa-aluminio-500ml',
+    name: 'Limpa Alumínio',
+    qty: '500 ml',
+    price: null,
+    img: limpaAluminio500,
+    desc: 'Desengordurante multiuso que deixa o alumínio brilhando.',
+    category: 'pesada',
+  },
+  {
+    id: 'limpa-aluminio-1l',
+    name: 'Limpa Alumínio',
+    qty: '1 Litro',
+    price: 15.0,
+    img: limpaAluminio1l,
+    desc: 'Poderoso contra gordura e manchas, deixa seu alumínio novo. Ação rápida.',
+    category: 'pesada',
+  },
+  {
+    id: 'removedor-1l',
+    name: 'Removedor',
+    qty: '1 Litro',
+    price: 15.0,
+    img: removedor,
+    desc: 'Poderoso: remove cola, tinta e sujeira pesada.',
+    category: 'pesada',
+  },
+  {
+    id: 'microfibra',
+    name: 'Pano Microfibra',
+    qty: '38x58 cm',
+    price: 7.0,
+    img: microfibra,
+    desc: 'Qualidade Itatex, tamanho 38x58, em várias cores.',
+    category: 'panos',
+  },
+  {
+    id: 'flanela-m',
+    name: 'Flanela AM',
+    qty: 'Tamanho M',
+    price: 5.0,
+    img: flanelaM,
+    desc: 'Qualidade Itatex, 100% algodão. Resistente, absorvente e macia.',
+    category: 'panos',
+  },
+  {
+    id: 'flanela-p',
+    name: 'Flanela AM',
+    qty: 'Tamanho P (28x38 cm)',
+    price: 3.5,
+    img: flanelaP,
+    desc: 'Qualidade Itatex, 100% algodão, 28cm x 38cm.',
+    category: 'panos',
+  },
+  {
+    id: 'esponja-4un',
+    name: 'Esponja Esponflora Multiuso',
+    qty: 'Pacote com 4',
+    price: 6.99,
+    img: esponja,
+    desc: 'Pacote fechado com 4 esponjas multiuso de 100x70x20mm.',
+    category: 'esponjas',
+  },
+  {
+    id: 'esponja-avulsa',
+    name: 'Esponja Esponflora Multiuso',
+    qty: 'Unidade avulsa',
+    price: 1.99,
+    img: esponja,
+    desc: 'Esponja multiuso Esponflora de 100x70x20mm.',
+    category: 'esponjas',
+  },
+  {
+    id: 'escovinha',
+    name: 'Escovinha Multiuso',
+    qty: '1 unidade',
+    price: 5.0,
+    img: escovinha,
+    desc: 'Escova para unhas e limpeza geral. Resistente e colorida.',
+    category: 'esponjas',
+  },
+  {
+    id: 'escovinha-3',
+    name: 'Escovinha Multiuso',
+    qty: 'Leve 3',
+    price: 10.0,
+    img: escovinha,
+    desc: 'Leve 3 escovas multiuso por apenas R$ 10,00. Ideal para unhas e pequenas limpezas.',
+    category: 'esponjas',
+  },
+  {
+    id: 'afiacao-facas',
+    name: 'Afiação de Facas',
+    qty: 'Por unidade (a partir de 3)',
+    price: 9.9,
+    img: afiacaoFacas,
+    desc: 'Afiação profissional de facas, tesouras e canivetes. Entrega grátis para 3+ facas na região.',
+    category: 'afiacao',
+  },
+  {
+    id: 'prendedor-1',
+    name: 'Prendedor de Madeira',
+    qty: 'Pacote com 12',
+    price: 4.99,
+    img: prendedor,
+    desc: 'Madeira resistente, qualidade Águia Branca. Pacote com 12 unidades.',
+    category: 'utilidades',
+  },
+  {
+    id: 'prendedor-2',
+    name: 'Prendedor de Madeira',
+    qty: '2 pacotes (24 un.)',
+    price: 8.0,
+    img: prendedor,
+    desc: 'Leve 2 pacotes por R$ 8,00. Madeira resistente, qualidade Águia Branca.',
+    category: 'utilidades',
+  },
+  {
+    id: 'suporte-celular',
+    name: 'Suporte de Celular de Parede',
+    qty: 'Unidade',
+    price: 15.0,
+    img: suporteCelular,
+    desc: 'Organizador com adesivo forte, não precisa furar. Compatível com todos os celulares, cores sortidas.',
+    category: 'utilidades',
+  },
+  {
+    id: 'suporte-celular-2',
+    name: 'Suporte de Celular de Parede',
+    qty: '2 unidades',
+    price: 25.0,
+    img: suporteCelular,
+    desc: 'Leve 2 por R$ 25,00. Adesivo forte, não precisa furar, cores sortidas.',
+    category: 'utilidades',
+  },
+  {
+    id: 'ralador',
+    name: 'Ralador e Descascador 2 em 1',
+    qty: 'Cores sortidas',
+    price: 9.99,
+    img: ralador,
+    desc: 'Rala, fatia e descasca. Aço inox, fácil de limpar. Cores: rosa, branco, preto, laranja e vermelho.',
+    category: 'utilidades',
+  },
+  {
+    id: 'faca-colorida',
+    name: 'Faca Colorida com Capa',
+    qty: 'Várias cores',
+    price: 4.99,
+    img: facaColorida,
+    desc: 'Faca colorida com capa protetora. Qualidade, várias cores.',
+    category: 'utilidades',
+  },
+  {
+    id: 'pano-chao-1',
+    name: 'Pano de Chão Xadrez',
+    qty: '70x25 cm',
+    price: 5.99,
+    img: panoChao,
+    desc: 'Alta absorção, resistente e tamanho grande.',
+    category: 'panos',
+  },
+  {
+    id: 'pano-chao-3',
+    name: 'Pano de Chão Xadrez',
+    qty: 'Leve 3',
+    price: 15.0,
+    img: panoChao,
+    desc: 'Leve 3 panos de chão xadrez por R$ 15,00. Alta absorção e resistente.',
+    category: 'panos',
+  },
+  {
+    id: 'pano-magico-1',
+    name: 'Pano Mágico Metálico Multiuso',
+    qty: '1 unidade',
+    price: 6.99,
+    img: panoMagico,
+    desc: 'Pano mágico metálico multiuso para limpeza pesada do dia a dia.',
+    category: 'panos',
+  },
+  {
+    id: 'pano-magico-5',
+    name: 'Pano Mágico Metálico Multiuso',
+    qty: 'Kit com 5',
+    price: 24.9,
+    img: panoMagicoKit5,
+    desc: 'Kit com 5 panos mágicos metálicos multiuso.',
+    category: 'panos',
+  },
+  {
+    id: 'pano-magico-7',
+    name: 'Pano Mágico Metálico Multiuso',
+    qty: 'Kit com 7',
+    price: 29.9,
+    img: panoMagicoKit7,
+    desc: 'Mais vendido! Kit com 7 panos mágicos metálicos multiuso.',
+    category: 'panos',
+  },
+  {
+    id: 'esponja-magica-1',
+    name: 'Esponja Mágica Clean Tech',
+    qty: '1 unidade',
+    price: 6.99,
+    img: esponjaMagica,
+    desc: 'Remove manchas e limpa tudo sem produto químico. Prática.',
+    category: 'esponjas',
+  },
+  {
+    id: 'esponja-magica-2',
+    name: 'Esponja Mágica Clean Tech',
+    qty: 'Leve 2',
+    price: 12.0,
+    img: esponjaMagica,
+    desc: 'Leve 2 esponjas mágicas por R$ 12,00. Remove manchas, não precisa de produto químico.',
+    category: 'esponjas',
+  },
+  {
+    id: 'esponja-magica-3',
+    name: 'Esponja Mágica Clean Tech',
+    qty: 'Leve 3',
+    price: 15.0,
+    img: esponjaMagica,
+    desc: 'Mais vendido! Leve 3 esponjas mágicas por R$ 15,00.',
+    category: 'esponjas',
   },
 ]
 

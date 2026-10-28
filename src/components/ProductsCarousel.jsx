@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useOrderModal } from '../context/OrderModalContext'
 import { useCart } from '../context/CartContext'
+import { WHATSAPP_NUMBER } from '../data'
 
 function formatPrice(v) {
   return v.toFixed(2).replace('.', ',')
@@ -67,6 +68,18 @@ export default function ProductsCarousel({ products }) {
             <h3>{p.name}</h3>
             {p.desc && <p className="product-card-desc">{p.desc}</p>}
             <span className="qty-pill">{p.qty}</span>
+            {p.price == null ? (
+              <div className="product-card-actions">
+                <a
+                  className="btn btn-green btn-block"
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Olá! Gostaria de saber o preço do produto: ${p.name} - ${p.qty}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consultar preço no WhatsApp
+                </a>
+              </div>
+            ) : (
             <div className="product-card-actions">
               <button
                 type="button"
@@ -99,6 +112,7 @@ export default function ProductsCarousel({ products }) {
                 {addedId === p.id ? 'Adicionado!' : 'Adicionar ao Carrinho'}
               </button>
             </div>
+            )}
           </div>
         ))}
       </div>

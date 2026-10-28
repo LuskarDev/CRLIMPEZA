@@ -796,6 +796,34 @@ ul {
   margin-bottom: 36px;
 }
 
+/* ---------- Categorias de produtos ---------- */
+.products-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 24px;
+}
+
+.products-tab {
+  border: 2px solid var(--green-dark);
+  background: #fff;
+  color: var(--green-dark);
+  font: inherit;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.products-tab:hover,
+.products-tab.is-active {
+  background: var(--green-dark);
+  color: #fff;
+}
+
 /* ---------- Carrossel de produtos ---------- */
 .products-carousel {
   position: relative;
@@ -3628,4 +3656,23 @@ ul {
     flex: 1;
     text-align: center;
   }
+}
+
+/* ---------- Seção Em breve ---------- */
+.coming-soon-section {
+  padding: 64px 0;
+  background: var(--bg-soft);
+}
+
+.coming-soon-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.coming-soon-visual img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  border-radius: 22px;
+  box-shadow: 0 20px 44px rgba(12, 46, 99, 0.28);
 }
